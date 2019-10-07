@@ -48,8 +48,8 @@ t5.calcularPreco()
 const terrenos = []
 terrenos.push(t1, t2, t3, t4, t5)
 
-// console.log(terrenos)
-// console.log(terrenos[2])
+console.log(terrenos)
+console.log(terrenos[2])
 
 // for (const item of terrenos) {
 //   console.log(item.mostrarInfos()

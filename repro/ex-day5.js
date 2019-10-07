@@ -3,6 +3,12 @@
 //    exceto pelo id (este deve ser gerado por vc, começando em 1 e sempre acrescentando +1)
 //    precisamos de ao menos 4 alunas nessa lista
 
+function Aluna(nome, dataDeNasc, SP, id) {
+  this.nome = nome;
+  this.dataDeNasc = dataDeNasc;
+  this.SP = SP;
+  this.id = id
+}
 // 2 Depois crie uma função para listar alunas, que irá mostrar (pode ser apenas no console) a lista de alunas.
 //   crie uma função  que lista apenas alunas que moram em SP.
 //   complete a função calcularIdade e calcule a idade das alunas
@@ -16,7 +22,7 @@ const div = document.getElementById("mostrarListadeAlunas")
 
 function nasceuEmSP() {
   let isChecked
-  checkbox.forEach(function(item) {
+  checkbox.forEach(function (item) {
     if (item.checked) {
       isChecked = item.value
     }
@@ -24,12 +30,17 @@ function nasceuEmSP() {
   return isChecked
 }
 
-botaoEnviar.addEventListener("click", function(e) {
+botaoEnviar.addEventListener("click", function (e) {
   e.preventDefault()
   //estamos recevendo aqui os dados
-  console.log(nome.value, dataDeNasc.value, nasceuEmSP())
+  criarAlunas(nome.value, dataDeNasc.value, nasceuEmSP.value)
 })
 
+const alunas = []
+function criarAlunas() {
+  alunas.push(new Aluna(nome, data, sp, ++id))
+}
+let id = 0;
 //  btnMostrar.addEventListener("click", funcao para mostrar alunas)
 
 function calcularIdade(anoDeNasc, mesDeNasc, diaDeNasc) {
